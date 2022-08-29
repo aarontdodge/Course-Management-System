@@ -31,6 +31,7 @@ CREATE TABLE courses (
     course_abbrev varchar(10) NOT NULL,
     course_num integer NOT NULL,
     course_name varchar(30) NOT NULL,
+    credits integer NOT NULL,
     PRIMARY KEY (course_abbrev, course_num)
 );
 
@@ -51,27 +52,24 @@ CREATE TABLE sections_students (
 
 -- Data insertion
 INSERT INTO students VALUES
-    (DEFAULT, "lwhite", "password", "Laverne", "White", TRUE),
-    (DEFAULT, "emontgomery", "password", "Eva", "Montgomery", FALSE),
-    (DEFAULT, "jmatthews", "Jan", "Matthews", TRUE);
+    (DEFAULT, 'lwhite', 'password', 'Laverne', 'White', TRUE),
+    (DEFAULT, 'emontgomery', 'password', 'Eva', 'Montgomery', FALSE),
+    (DEFAULT, 'jmatthews', 'password', 'Jan', 'Matthews', TRUE);
 
-INSERT INTO admins VALUES (DEFAULT, "atdodge", "password", "Aaron", "Dodge");
+INSERT INTO admins VALUES (DEFAULT, 'atdodge', 'password', 'Aaron', 'Dodge');
 
 INSERT INTO teachers VALUES 
-    (DEFAULT, "lkim", "password", "Leslie", "Kim"),
-    (DEFAULT, "panderson", "Pamela", "Anderson"),
-    (DEFAULT, "ccarter", "password", "Charlie", "Carter");
+    (DEFAULT, 'lkim', 'password', 'Leslie', 'Kim'),
+    (DEFAULT, 'panderson', 'password', 'Pamela', 'Anderson'),
+    (DEFAULT, 'ccarter', 'password', 'Charlie', 'Carter');
 
 INSERT INTO courses VALUES 
-    ("ENG", 101, "Introductory English"),
-    ("CS", 101, "Introduction to Programming"),
-    ("MATH", 101, "College Algebra"),
-    ("CHEM", 105, "Introduction to Chemistry")
-    ("CHEM", 250, "Organic Chemistry"),
-    ("ENG", 210, "Ancient Literature"),
-    ("BIO" 275, "Genetics")
+    ('ENG', 101, 'Introductory English', 3),
+    ('CS', 101, 'Introduction to Programming', 3),
+    ('MATH', 101, 'College Algebra', 3),
+    ('CHEM', 105, 'Introduction to Chemistry', 4),
+    ('CHEM', 250, 'Organic Chemistry', 4),
+    ('ENG', 210, 'Ancient Literature', 2),
+    ('BIO', 275, 'Genetics', 3);
 
-    --     course_abbrev varchar(10) NOT NULL,
-    -- course_num integer NOT NULL,
-    -- course_name varchar(30) NOT NULL,
-    -- PRIMARY KEY (course_abbrev, course_num)
+END;
