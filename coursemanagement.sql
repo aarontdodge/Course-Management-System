@@ -72,4 +72,4 @@ INSERT INTO courses VALUES
     ('ENG', 210, 'Ancient Literature', 2),
     ('BIO', 275, 'Genetics', 3);
 
-END;
+COMMIT;
